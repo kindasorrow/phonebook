@@ -4,7 +4,7 @@
     <div class="container">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Создать новый пост</h2>
+                <h2>Создать новую запись</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('posts.index') }}"> Назад</a>
@@ -49,7 +49,7 @@
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 text-center py-2">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Создать</button>
             </div>
         </div>
     </form>

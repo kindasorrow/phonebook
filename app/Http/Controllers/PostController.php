@@ -41,7 +41,7 @@ class PostController extends Controller
         //Phonebook::create($request->all());
     //Phonebook::query()->create();
         $db = DB::insert('insert into phonebooks (user_id, name,email,phone) values (?, ?,?,?)', [$user_id, $name,$email,$phone]);
-        return redirect()->route('posts.index')->with('success','Post created successfully.');
+        return redirect()->route('posts.index')->with('success','Запись успешно добавлена');
     }
 
 
@@ -67,7 +67,7 @@ class PostController extends Controller
 
         $post->update($request->all());
 
-        return redirect()->route('posts.index')->with('success','Post updated successfully');
+        return redirect()->route('posts.index')->with('success','Запись успешно обновлена');
     }
 
 

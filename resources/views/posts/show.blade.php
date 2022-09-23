@@ -4,7 +4,7 @@
     <div class="container">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Показ поста</h2>
+                <h2> Показ записи</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('posts.index') }}"> Назад </a>
