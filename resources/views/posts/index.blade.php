@@ -32,7 +32,6 @@
             <th>Телефон</th>
         </tr>
         @foreach ($posts as $post)
-            @if ($post->user_id ==  auth()->user()->id)
             <tr>
                 <td>{{$loop->index + 1}}</td>
                 <td>{{$post->name}}</td>
@@ -49,7 +48,6 @@
                     </form>
                 </td>
             </tr>
-            @endif
         @endforeach
     </table>
 

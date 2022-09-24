@@ -14,8 +14,9 @@ class PostController extends Controller
     }
     public function index()
     {
-        $posts = Phonebook::all();
         $user_id = auth()->user()->id;
+        $posts = Phonebook::where('user_id',$user_id)->get();
+
         return view('posts.index', ['posts'=>$posts,'user_id'=>$user_id]);
     }
 
@@ -33,14 +34,12 @@ class PostController extends Controller
         'email' => 'required',
          'phone'=>'required',
     ]);
-        //$posts = Phonebook::query()->get();
+
         $user_id = auth()->user()->id;
-        $name = $request->name;
-        $email = $request->email;
-        $phone = $request->phone;
-        //Phonebook::create($request->all());
-    //Phonebook::query()->create();
-        $db = DB::insert('insert into phonebooks (user_id, name,email,phone) values (?, ?,?,?)', [$user_id, $name,$email,$phone]);
+        $request->merge([
+            'user_id' => $user_id
+        ]);
+        Phonebook::create($request->all());
         return redirect()->route('posts.index')->with('success','Запись успешно добавлена');
     }
 

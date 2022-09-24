@@ -17,7 +17,7 @@ class CreatePhonebooksTable extends Migration
 
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->string('name')->index();
+            $table->string('name');
             $table->string('email');
             $table->string('phone');
             $table->timestamps();
